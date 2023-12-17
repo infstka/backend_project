@@ -1,0 +1,24 @@
+version: '3'
+services:
+  nodejs-server:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+
+  mysql-db:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: 'backendtask'
+#      MYSQL_USER: 'task_user'
+#      MYSQL_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: 'Malder100malder800'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      retries: 30
+      timeout: 5s
+      start_period: 10s

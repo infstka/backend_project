@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователь</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Пользователь</h1>
+
+        <!--обновление пользователя-->
+        <form id="updateForm">
+            <!--<input type="text" id="updateEmail" placeholder="Email">-->
+            <input type="text" id="updateFirstName" placeholder="First Name">
+            <input type="text" id="updateLastName" placeholder="Last Name">
+            <input type="text" id="updatePassword" placeholder="Password">            
+            <input type="file" id="updateImage" accept="image/*">
+            
+            <button type="submit">Обновить</button>
+        </form>
+
+        <!--удаление пользователя-->
+        <form id="deleteForm">
+            <button type="submit">Удалить</button>
+        </form>
+
+        <!--генерации PDF-->
+        <form id="generatePDF">
+            <button type="submit">Сгенерировать PDF</button>
+        </form>
+
+        <!--получение PDF-->
+        <button id="getPDF" class="centered-button">Получить PDF</button>
+        <p id="message"></p>
+    </div>
+    <script src="user.js"></script>
+</body>
+
+</html>
