@@ -16,10 +16,9 @@ const pagesPath = path.join(__dirname, 'pages');
 app.use(express.static(pagesPath));
 
 //настройки и подключение к MySQL
-const sequelize = new Sequelize('backendtask', 'task_user', '', {
+const sequelize = new Sequelize('backendtask', 'task_user', 'password', {
     host: 'mysql-db',
     dialect: 'mysql',
-    port: 3307
 });
 
 

@@ -14,11 +14,11 @@ services:
       - "3307:3306"
     environment:
       MYSQL_DATABASE: 'backendtask'
-#      MYSQL_USER: 'task_user'
-#      MYSQL_PASSWORD: ''
-      MYSQL_ROOT_PASSWORD: 'Malder100malder800'
+      MYSQL_USER: 'task_user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       retries: 30
-      timeout: 5s
+      timeout: 20s
       start_period: 10s

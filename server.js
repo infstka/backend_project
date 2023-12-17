@@ -48,10 +48,9 @@ app.use(bodyParser.json());
 var pagesPath = path.join(__dirname, 'pages');
 app.use(express.static(pagesPath));
 //настройки и подключение к MySQL
-var sequelize = new sequelize_1.Sequelize('backendtask', 'task_user', '', {
+var sequelize = new sequelize_1.Sequelize('backendtask', 'task_user', 'password', {
     host: 'mysql-db',
     dialect: 'mysql',
-    port: 3307
 });
 //модель User
 var User = sequelize.define('User', {
