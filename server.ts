@@ -14,13 +14,15 @@ app.use(bodyParser.json());
 
 const pagesPath = path.join(__dirname, 'pages');
 app.use(express.static(pagesPath));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(pagesPath, 'start', 'start.html'));
+});
 
 //настройки и подключение к MySQL
 const sequelize = new Sequelize('backendtask', 'task_user', 'password', {
     host: 'mysql-db',
     dialect: 'mysql',
 });
-
 
 //модель User
 const User = sequelize.define('User', {

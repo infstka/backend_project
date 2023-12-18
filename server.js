@@ -47,6 +47,9 @@ var app = express();
 app.use(bodyParser.json());
 var pagesPath = path.join(__dirname, 'pages');
 app.use(express.static(pagesPath));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(pagesPath, 'start', 'start.html'));
+});
 //настройки и подключение к MySQL
 var sequelize = new sequelize_1.Sequelize('backendtask', 'task_user', 'password', {
     host: 'mysql-db',
